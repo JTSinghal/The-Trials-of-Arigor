@@ -1,5 +1,7 @@
 from class_definitions import *
 
+
+#################################### Define Map ####################################################
 ARIGOR = []
 
 for x in range(0, 4):
@@ -9,7 +11,7 @@ for x in range(0, 4):
 	ARIGOR.append(rowMaker)
 	rowMaker = []
 
-######################################################################################################
+#################################### Define Locations ################################################
 GoblinsLair = Place("Goblin's Lair", [], [], [], [])
 GoblinsLair.self.people = []
 GoblinsLair.self.creatures = []
@@ -100,7 +102,6 @@ PuzzleRoom.self.creatures = []
 PuzzleRoom.self.treasures = 1
 PuzzleRoom.self.houses = []
 
-######################################################################################################
 ARIGOR[0][0] = GoblinsLair
 ARIGOR[0][1] = UnicornIsland
 ARIGOR[0][2] = VampireMansion
@@ -117,4 +118,18 @@ ARIGOR[3][0] = ElvishKingdom
 ARIGOR[3][1] = DragonLair
 ARIGOR[3][2] = AmazonianKingdom
 ARIGOR[3][3] = PuzzleRoom	#keeps getting new puzzles for you to solve, for extra prizes, after each quest you finish
-######################################################################################################
+
+################################### Define Enemy Classes #############################################
+
+Goblin = Enemy("Goblin", )
+self.species =
+self.health =
+self.gold =
+self.items =
+self.level =
+
+
+####################################### Main methods ##################################################
+
+pickup = []   #will be emptied every 3 minutes all drops go in here
+def updateScreenText():
