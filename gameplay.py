@@ -11,6 +11,41 @@ for x in range(0, 4):
 	ARIGOR.append(rowMaker)
 	rowMaker = []
 
+################################### Define Enemy Classes #############################################
+
+Goblin = Enemy("Goblin", 1, 100, [])
+Goblin.self.items = []
+
+Unicorn = Enemy("Unicorn", 1, 100, [])
+Unicorn.self.items = []
+
+Vampire = Enemy("Vampire", 1, 100, [])
+Vampire.self.items = []
+
+Wizard = Enemy("Wizard", 1, 100, [])
+Wizard.self.items = []
+
+Centaur = Enemy("Centaur", 1, 100, [])
+Centaur.self.items = []
+
+Cyclops = Enemy("Cyclops", 1, 100, [])
+Cyclops.self.items = []
+
+Siren = Enemy("Siren", 1, 100, [])
+Siren.self.items = []
+
+Phoenix = Enemy("Phoenix", 1, 100, [])
+Phoenix.self.items = []
+
+Elf = Enemy("Elf", 1, 100, [])
+Elf.self.items = []
+
+Dragon = Enemy("Dragon", 1, 100, [])
+Dragon.self.items = []
+
+Amazonian = Enemy("Amazonian", 1, 100, [])
+Amazonian.self.items = []
+
 #################################### Define Locations ################################################
 GoblinsLair = Place("Goblin's Lair", [], [], [], [])
 GoblinsLair.self.people = []
@@ -118,16 +153,6 @@ ARIGOR[3][0] = ElvishKingdom
 ARIGOR[3][1] = DragonLair
 ARIGOR[3][2] = AmazonianKingdom
 ARIGOR[3][3] = PuzzleRoom	#keeps getting new puzzles for you to solve, for extra prizes, after each quest you finish
-
-################################### Define Enemy Classes #############################################
-
-Goblin = Enemy("Goblin", )
-self.species =
-self.health =
-self.gold =
-self.items =
-self.level =
-
 
 ####################################### Main methods ##################################################
 
