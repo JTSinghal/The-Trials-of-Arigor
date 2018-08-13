@@ -14,128 +14,128 @@ for x in range(0, 4):
 ################################### Define Enemy Classes #############################################
 
 Goblin = Enemy("Goblin", 1, 100, [])
-Goblin.self.items = []
+Goblin.items = []
 
 Unicorn = Enemy("Unicorn", 1, 100, [])
-Unicorn.self.items = []
+Unicorn.items = []
 
 Vampire = Enemy("Vampire", 1, 100, [])
-Vampire.self.items = []
+Vampire.items = []
 
 Wizard = Enemy("Wizard", 1, 100, [])
-Wizard.self.items = []
+Wizard.items = []
 
 Centaur = Enemy("Centaur", 1, 100, [])
-Centaur.self.items = []
+Centaur.items = []
 
 Cyclops = Enemy("Cyclops", 1, 100, [])
-Cyclops.self.items = []
+Cyclops.items = []
 
 Siren = Enemy("Siren", 1, 100, [])
-Siren.self.items = []
+Siren.items = []
 
 Phoenix = Enemy("Phoenix", 1, 100, [])
-Phoenix.self.items = []
+Phoenix.items = []
 
 Elf = Enemy("Elf", 1, 100, [])
-Elf.self.items = []
+Elf.items = []
 
 Dragon = Enemy("Dragon", 1, 100, [])
-Dragon.self.items = []
+Dragon.items = []
 
 Amazonian = Enemy("Amazonian", 1, 100, [])
-Amazonian.self.items = []
+Amazonian.items = []
 
 #################################### Define Locations ################################################
 GoblinsLair = Place("Goblin's Lair", [], [], [], [])
-GoblinsLair.self.people = []
-GoblinsLair.self.creatures = []
-GoblinsLair.self.treasures = 1
-GoblinsLair.self.houses = []
+GoblinsLair.people = []
+GoblinsLair.creatures = []
+GoblinsLair.treasures = 1
+GoblinsLair.houses = []
 
 UnicornIsland = Place("Unicorn Island", [], [], [], [])
-UnicornIsland.self.people = []
-UnicornIsland.self.creatures = []
-UnicornIsland.self.treasures = 1
-UnicornIsland.self.houses = []
+UnicornIsland.people = []
+UnicornIsland.creatures = []
+UnicornIsland.treasures = 1
+UnicornIsland.houses = []
 
 VampireMansion = Place("Vampire Mansion", [], [], [], [])
-VampireMansion.self.people = []
-VampireMansion.self.creatures = []
-VampireMansion.self.treasures = 1
-VampireMansion.self.houses = []
+VampireMansion.people = []
+VampireMansion.creatures = []
+VampireMansion.treasures = 1
+VampireMansion.houses = []
 
 WizardTower = Place("Wizard's Tower", [], [], [], [])
-WizardTower.self.people = []
-WizardTower.self.creatures = []
-WizardTower.self.treasures = 1
-WizardTower.self.houses = []
+WizardTower.people = []
+WizardTower.creatures = []
+WizardTower.treasures = 1
+WizardTower.houses = []
 
 CentaurField = Place("Centaur Field", [], [], [], [])
-CentaurField.self.people = []
-CentaurField.self.creatures = []
-CentaurField.self.treasures = 1
-CentaurField.self.houses = []
+CentaurField.people = []
+CentaurField.creatures = []
+CentaurField.treasures = 1
+CentaurField.houses = []
 
 Palace = Place("Palace", [], [], [], [])
-Palace.self.people = []
-Palace.self.creatures = []
-Palace.self.treasures = 1
-Palace.self.houses = []
+Palace.people = []
+Palace.creatures = []
+Palace.treasures = 1
+Palace.houses = []
 
 CyclopDen = Place("Cyclop's Den", [], [], [], [])
-CyclopDen.self.people = []
-CyclopDen.self.creatures = []
-CyclopDen.self.treasures = 1
-CyclopDen.self.houses = []
+CyclopDen.people = []
+CyclopDen.creatures = []
+CyclopDen.treasures = 1
+CyclopDen.houses = []
 
 SirenLake = Place("Siren Lake", [], [], [], [])
-SirenLake.self.people = []
-SirenLake.self.creatures = []
-SirenLake.self.treasures = 1
-SirenLake.self.houses = []
+SirenLake.people = []
+SirenLake.creatures = []
+SirenLake.treasures = 1
+SirenLake.houses = []
 
 HOME = Place("HOME", [], [], [], [])
-HOME.self.people = []
-HOME.self.creatures = []
-HOME.self.treasures = 1
-HOME.self.houses = []
+HOME.people = []
+HOME.creatures = []
+HOME.treasures = 1
+HOME.houses = []
 
 MARKET = Place("MARKET", [], [], [], [])
-MARKET.self.people = []
-MARKET.self.creatures = []
-MARKET.self.treasures = 1
-MARKET.self.houses = []
+MARKET.people = []
+MARKET.creatures = []
+MARKET.treasures = 1
+MARKET.houses = []
 
 PhoenixField = Place("Phoenix Field", [], [], [], [])
-PhoenixField.self.people = []
-PhoenixField.self.creatures = []
-PhoenixField.self.treasures = 1
-PhoenixField.self.houses = []
+PhoenixField.people = []
+PhoenixField.creatures = []
+PhoenixField.treasures = 1
+PhoenixField.houses = []
 
 ElvishKingdom = Place("Elvish Kingdom", [], [], [], [])
-ElvishKingdom.self.people = []
-ElvishKingdom.self.creatures = []
-ElvishKingdom.self.treasures = 1
-ElvishKingdom.self.houses = []
+ElvishKingdom.people = []
+ElvishKingdom.creatures = []
+ElvishKingdom.treasures = 1
+ElvishKingdom.houses = []
 
 DragonLair = Place("Dragon's Lair", [], [], [], [])
-DragonLair.self.people = []
-DragonLair.self.creatures = []
-DragonLair.self.treasures = 1
-DragonLair.self.houses = []
+DragonLair.people = []
+DragonLair.creatures = []
+DragonLair.treasures = 1
+DragonLair.houses = []
 
 AmazonianKingdom = Place("Amazonian Kingdom", [], [], [], [])
-AmazonianKingdom.self.people = []
-AmazonianKingdom.self.creatures = []
-AmazonianKingdom.self.treasures = 1
-AmazonianKingdom.self.houses = []
+AmazonianKingdom.people = []
+AmazonianKingdom.creatures = []
+AmazonianKingdom.treasures = 1
+AmazonianKingdom.houses = []
 
 PuzzleRoom = Place("Puzzle Room", [], [], [], [])
-PuzzleRoom.self.people = []
-PuzzleRoom.self.creatures = []
-PuzzleRoom.self.treasures = 1
-PuzzleRoom.self.houses = []
+PuzzleRoom.people = []
+PuzzleRoom.creatures = []
+PuzzleRoom.treasures = 1
+PuzzleRoom.houses = []
 
 ARIGOR[0][0] = GoblinsLair
 ARIGOR[0][1] = UnicornIsland
@@ -158,3 +158,13 @@ ARIGOR[3][3] = PuzzleRoom	#keeps getting new puzzles for you to solve, for extra
 
 pickup = []   #will be emptied every 3 minutes all drops go in here
 def updateScreenText():
+Alexander = Alexander()
+
+### Introductory
+
+### Main Game Loop
+user_input = None
+
+while (user_input.lower() != "exit game"):
+	if user_input[0] == "go":
+		if user_input[1] == "north" and 

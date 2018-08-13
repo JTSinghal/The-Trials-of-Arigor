@@ -13,7 +13,7 @@ class Alexander(object):
 	def attack(self, attackName, enemyIdentifier):	#if user asks for an attack that isn't in the attacks, comp says no
 		for attack in self.attacks:
 			if (attackName == attack):
-				enemyIdentifier.self.health -= self.attacks[attack]
+				enemyIdentifier.health -= self.attacks[attack]
 
 	def die():
 		#restart at last checkpoint with the items you had then
@@ -34,8 +34,8 @@ class Enemy(object):
 		self.items = items
 
 	def attack(self, AlexanderIdentifier):	#each species has its own attacks, the attacks it deals are random	#could have conditional, if health != 0, continue attacking, then stop after health <= 0, won't need die()
-		while(self.health != 0 and AlexanderIdentifier.self.health != 0):
-			AlexanderIdentifier.self.health -= self.level * 10 #subject to change
+		while(self.health != 0 and AlexanderIdentifier.health != 0):
+			AlexanderIdentifier.health -= self.level * 10 #subject to change
 
 	def die():	#dies and does not attack, basically removes instance of object
 		drop()
@@ -43,7 +43,7 @@ class Enemy(object):
 		#delete instance of object
 
 	def drop(self, AlexanderIdentifier, pickup):
-		AlexanderIdentifier.self.gold += self.gold
+		AlexanderIdentifier.gold += self.gold
 		for items in self.items:
 			pickup.append(items)
 
@@ -61,7 +61,7 @@ class Friend(object):	#These are npcs in the game that can help you or give you 
 		#delete instance of object from the game
 
 	def drop(self, AlexanderIdentifier, pickup):
-		AlexanderIdentifier.self.gold += self.gold
+		AlexanderIdentifier.gold += self.gold
 		for items in self.items:
 			pickup.append(items)
 
