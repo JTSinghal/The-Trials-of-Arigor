@@ -26,11 +26,11 @@ class Alexander(object):
 
 
 class Enemy(object):
-	def __init__(self, species, level, gold, items):	#items is an array, can be empty. Gold is amount
+	def __init__(self, species, level, items):	#items is an array, can be empty. Gold is amount
 		self.species = species
 		self.level = level   #defines strength of attack
-		self.health = level * 100
-		self.gold = gold
+		self.health = self.level * 100
+		self.gold = self.level * 100
 		self.items = items
 
 	def attack(self, AlexanderIdentifier):	#each species has its own attacks, the attacks it deals are random	#could have conditional, if health != 0, continue attacking, then stop after health <= 0, won't need die()

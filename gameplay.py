@@ -1,4 +1,5 @@
 from class_definitions import *
+import random
 
 
 #################################### Define Map ####################################################
@@ -11,129 +12,110 @@ for x in range(0, 4):
 	ARIGOR.append(rowMaker)
 	rowMaker = []
 
-################################### Define Enemy Classes #############################################
+#################################### Items Array Generator ##########################################
 
-Goblin = Enemy("Goblin", 1, 100, [])
-Goblin.items = []
+def itemsGenerator(numItems, itemsToChooseFrom):
+	returnedArray = []
+	for x in range(0, numItems):
+		returnedArray.append(random.choice(itemsToChooseFrom))
 
-Unicorn = Enemy("Unicorn", 1, 100, [])
-Unicorn.items = []
-
-Vampire = Enemy("Vampire", 1, 100, [])
-Vampire.items = []
-
-Wizard = Enemy("Wizard", 1, 100, [])
-Wizard.items = []
-
-Centaur = Enemy("Centaur", 1, 100, [])
-Centaur.items = []
-
-Cyclops = Enemy("Cyclops", 1, 100, [])
-Cyclops.items = []
-
-Siren = Enemy("Siren", 1, 100, [])
-Siren.items = []
-
-Phoenix = Enemy("Phoenix", 1, 100, [])
-Phoenix.items = []
-
-Elf = Enemy("Elf", 1, 100, [])
-Elf.items = []
-
-Dragon = Enemy("Dragon", 1, 100, [])
-Dragon.items = []
-
-Amazonian = Enemy("Amazonian", 1, 100, [])
-Amazonian.items = []
+	return returnedArray
 
 #################################### Define Locations ################################################
 GoblinsLair = Place("Goblin's Lair", [], [], [], [])
-GoblinsLair.people = []
-GoblinsLair.creatures = []
+GoblinsLair.people = []	#goblin king, goblin's prisoner
+for x in range (0, random.randint(10, 15)):
+	GoblinsLair.creatures.append(Enemy("Goblin", 1, itemsGenerator(2, ["Goblin's Hide", "Goblin Armor", "Goblin Sword", "Goblin Shield", "Goblin Bones"])))
 GoblinsLair.treasures = 1
 GoblinsLair.houses = []
 
 UnicornIsland = Place("Unicorn Island", [], [], [], [])
-UnicornIsland.people = []
-UnicornIsland.creatures = []
+UnicornIsland.people = [] #Unicorn Leader, 
+for x in range (0, random.randint(3, 7)):
+	UnicornIsland.creatures.append(Enemy("Unicorn", 7, itemsGenerator(2, ["Unicorn Blood", "Unicorn Horn", "Unicorn Hair", "Rainbow", "Hooves", "Unicorn Bones"])))
 UnicornIsland.treasures = 1
 UnicornIsland.houses = []
 
 VampireMansion = Place("Vampire Mansion", [], [], [], [])
 VampireMansion.people = []
-VampireMansion.creatures = []
+for x in range (0, random.randint(8, 13)):
+	VampireMansion.creatures.append(Enemy("Vampire", 3, itemsGenerator(2, ["Vampire Fangs", "Vampire Cape", "Necklace", "Vampire Heart", "Vampire Bones"])))
 VampireMansion.treasures = 1
 VampireMansion.houses = []
 
 WizardTower = Place("Wizard's Tower", [], [], [], [])
 WizardTower.people = []
-WizardTower.creatures = []
+for x in range (0, 4):
+	WizardTower.creatures.append(Enemy("Wizard", 10, itemsGenerator(2, ["Wand", "Staff", "Wizard Robes", "Divinity Orb", "Wizard Bones"])))
 WizardTower.treasures = 1
 WizardTower.houses = []
 
 CentaurField = Place("Centaur Field", [], [], [], [])
 CentaurField.people = []
-CentaurField.creatures = []
-CentaurField.treasures = 1
+for x in range (0, random.randint(5, 10)):
+	CentaurField.creatures.append(Enemy("Centaur", 3, itemsGenerator(2, ["Centaur Hide", "Hooves", "Centaur Hair", "Centaur Blood", "Honor", "Centaur Bones"])))
+CentaurField.treasures = 2
 CentaurField.houses = []
 
 Palace = Place("Palace", [], [], [], [])
 Palace.people = []
-Palace.creatures = []
 Palace.treasures = 1
 Palace.houses = []
 
 CyclopDen = Place("Cyclop's Den", [], [], [], [])
 CyclopDen.people = []
-CyclopDen.creatures = []
+for x in range (0, random.randint(5, 10)):
+	CyclopDen.creatures.append(Enemy("Cyclops", 7, itemsGenerator(2, ["Cyclops Eyeball", "Cyclops Club", "Cyclops Lioncloth", "Rock", "Cyclops Bones"])))
 CyclopDen.treasures = 1
 CyclopDen.houses = []
 
 SirenLake = Place("Siren Lake", [], [], [], [])
 SirenLake.people = []
-SirenLake.creatures = []
+for x in range (0, random.randint(5, 10)):
+	SirenLake.creatures.append(Enemy("Siren", 6, itemsGenerator(1, ["Siren Scales", "Siren's Song", "Siren Teeth", "Siren Bones"])))
 SirenLake.treasures = 1
 SirenLake.houses = []
 
 HOME = Place("HOME", [], [], [], [])
 HOME.people = []
-HOME.creatures = []
 HOME.treasures = 1
 HOME.houses = []
 
 MARKET = Place("MARKET", [], [], [], [])
 MARKET.people = []
-MARKET.creatures = []
 MARKET.treasures = 1
 MARKET.houses = []
 
 PhoenixField = Place("Phoenix Field", [], [], [], [])
 PhoenixField.people = []
-PhoenixField.creatures = []
+for x in range (0, random.randint(5, 10)):
+	PhoenixField.creatures.append(Enemy("Phoenix", 9, itemsGenerator(2, ["Phoenix Feather", "Phoenix Ashes", "Phoenix Talons", "Eternal Flame", "Phoenix Bones"])))
 PhoenixField.treasures = 1
 PhoenixField.houses = []
 
 ElvishKingdom = Place("Elvish Kingdom", [], [], [], [])
 ElvishKingdom.people = []
-ElvishKingdom.creatures = []
+for x in range (0, random.randint(5, 10)):
+	ElvishKingdom.creatures.append(Enemy("Elf", 12, itemsGenerator(2, ["Elf's Hide", "Elf Armor", "Elf Blood", "Elf Shield", "Elf Bones"])))
 ElvishKingdom.treasures = 1
 ElvishKingdom.houses = []
 
 DragonLair = Place("Dragon's Lair", [], [], [], [])
 DragonLair.people = []
-DragonLair.creatures = []
+for x in range (0, 2):
+	DragonLair.creatures.append(Enemy("Dragon", 15, itemsGenerator(2, ["Dragon's Hide", "Dragon Scales", "Dragon Wings", "Eternal Flame", "Dragon Bones"])))
 DragonLair.treasures = 1
 DragonLair.houses = []
 
 AmazonianKingdom = Place("Amazonian Kingdom", [], [], [], [])
 AmazonianKingdom.people = []
-AmazonianKingdom.creatures = []
+for x in range (0, random.randint(5, 10)):
+	AmazonianKingdom.creatures.append(Enemy("Amazonian", 8, itemsGenerator(2, ["Amazonian Armor", "Amazonian Sword", "Amazonian Sword", "Amazonian Shield", "Amazonian Bones"])))
 AmazonianKingdom.treasures = 1
 AmazonianKingdom.houses = []
 
 PuzzleRoom = Place("Puzzle Room", [], [], [], [])
 PuzzleRoom.people = []
-PuzzleRoom.creatures = []
 PuzzleRoom.treasures = 1
 PuzzleRoom.houses = []
 
