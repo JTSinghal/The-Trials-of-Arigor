@@ -139,14 +139,63 @@ ARIGOR[3][3] = PuzzleRoom	#keeps getting new puzzles for you to solve, for extra
 ####################################### Main methods ##################################################
 
 pickup = []   #will be emptied every 3 minutes all drops go in here
-def updateScreenText():
+
+def describe_Location(positionX, positionY):
+def describe_ThingsYouCanDo(positionX, positionY):
+def describe_BattleScene():
+def describe_Pickup()
+def describe_Quest()
+def describe_Marketplace(stage) #stage 1 is just displaying prices, stage 2 is confirming that alex wants to sell
+def describe_
+
+
 Alexander = Alexander()
 
 ### Introductory
 
 ### Main Game Loop
-user_input = None
+user_input = raw_input("What would you like to do? :\n")
+user_input_split = user_input.lower().split()
 
 while (user_input.lower() != "exit game"):
-	if user_input[0] == "go":
-		if user_input[1] == "north" and 
+	user_input_split = user_input.lower().split()
+	if user_input_split[0] == "go":
+
+		if user_input_split[1] == "north":
+			if Alexander.positionY == 0:
+				print "There seems to be a cliff in this direction that you can't cross. Drat.\n"
+			else:
+				Alexander.positionY -= 1
+		elif user_input_split[1] == "east":
+			if Alexander.positionX == 3:
+				print "There seems to be a cliff in this direction that you can't cross. Drat.\n"
+			else:
+				Alexander.positionX += 1
+		elif user_input_split[1] == "south":
+			if Alexander.positionY == 3:
+				print "There seems to be a cliff in this direction that you can't cross. Drat.\n"
+			else:
+				Alexander.positionY += 1
+		elif user_input_split[1] == "west":	
+			if Alexander.positionX == 0:
+				print "There seems to be a cliff in this direction that you can't cross. Drat.\n"
+			else:
+				Alexander.positionX -= 1
+		else:
+			print "Invalid request, you may only specify if you would like to GO: NORTH, SOUTH, EAST, or WEST\n"
+
+		describe_Location(Alexander.positionX, Alexander.positionY)
+		describe_ThingsYouCanDo(Alexander.positionX, Alexander.positionY)
+
+	elif user_input_split[0] == "attack":
+
+		if user_input_split[1] != (ARIGOR[Alexander.positionX][Alexander.positionY]).creatures[0].species.lower():
+			print "There are no " + user_input_split[1] + "s here.\n"
+		elif user_input_split[2] < 0 or user_input_split[2] > len((ARIGOR[Alexander.positionX][Alexander.positionY]).creatures):
+			print "Cannot attack " + user_input_split[1] + user_input_split[2] + ". There are only " + len((ARIGOR[Alexander.positionX][Alexander.positionY]).creatures) + user_input_split[1] + "s. If you would like to attack, please choose a number between 0 and " + len((ARIGOR[Alexander.positionX][Alexander.positionY]).creatures) + ".\n"
+		else:
+
+	else:
+		print "Please enter a valid command.\n"
+
+	user_input = raw_input("What would you like to do?\n")
