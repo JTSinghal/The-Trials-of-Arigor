@@ -149,6 +149,19 @@ def describe_Marketplace(stage) #stage 1 is just displaying prices, stage 2 is c
 def describe_
 
 
+def changeAttributes_levelChange(level):	#changes attributes of alex and some other people when he reaches a new level. For example changes the dialog he speakes with the princess
+	if level == 2:
+	elif level == 3:
+	elif level == 4:
+	elif level == 5:
+	elif level == 6:
+	elif level == 7:
+	elif level == 8:
+	elif level == 9:
+	elif level == 10:
+
+
+
 Alexander = Alexander()
 
 ### Introductory
@@ -187,13 +200,25 @@ while (user_input.lower() != "exit game"):
 		describe_Location(Alexander.positionX, Alexander.positionY)
 		describe_ThingsYouCanDo(Alexander.positionX, Alexander.positionY)
 
-	elif user_input_split[0] == "attack":
+	elif user_input_split[0] == "attack":	#TODO
 
 		if user_input_split[1] != (ARIGOR[Alexander.positionX][Alexander.positionY]).creatures[0].species.lower():
 			print "There are no " + user_input_split[1] + "s here.\n"
 		elif user_input_split[2] < 0 or user_input_split[2] > len((ARIGOR[Alexander.positionX][Alexander.positionY]).creatures):
 			print "Cannot attack " + user_input_split[1] + user_input_split[2] + ". There are only " + len((ARIGOR[Alexander.positionX][Alexander.positionY]).creatures) + user_input_split[1] + "s. If you would like to attack, please choose a number between 0 and " + len((ARIGOR[Alexander.positionX][Alexander.positionY]).creatures) + ".\n"
 		else:
+
+	elif user_input_split[0] + user_input_split[1] == "talk to":
+
+		i = 0
+		while((ARIGOR[Alexander.positionX][Alexander.positionY]).people[i] != user_input_split[2]):
+			i++
+		if (i >= len((ARIGOR[Alexander.positionX][Alexander.positionY]).people)):
+			print "Please enter a valid person you would like to talk to, who is in your immediate surroundings.\n"
+		else:
+			print (ARIGOR[Alexander.positionX][Alexander.positionY]).people[i].dialogue
+
+	elif user_input_split[0] == ""
 
 	else:
 		print "Please enter a valid command.\n"

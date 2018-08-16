@@ -48,12 +48,13 @@ class Enemy(object):
 			pickup.append(items)
 
 class Friend(object):	#These are npcs in the game that can help you or give you stuff
-	def __init__(self, species, health, gold, items, advice):
-		self.species = species
+	def __init__(self, Name, description, health, gold, items, dialogue):
+		self.Name = Name
+		self.description = description
 		self.health = health
 		self.gold = gold
 		self.items = items
-		self.advice = advice  #advice given to alexander when he asks for help
+		self.dialogue = dialogue  #advice given to alexander when he asks for help
 
 	def die():
 		drop()
