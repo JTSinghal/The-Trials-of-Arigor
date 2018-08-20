@@ -67,12 +67,12 @@ Palace.people = []
 Palace.treasures = 1
 Palace.houses = []
 
-CyclopDen = Place("Cyclop's Den", [], [], [], [])
-CyclopDen.people = []
+CyclopsDen = Place("Cyclops' Den", [], [], [], [])
+CyclopsDen.people = []
 for x in range (0, random.randint(5, 10)):
-	CyclopDen.creatures.append(Enemy("Cyclops", 7, itemsGenerator(2, ["Cyclops Eyeball", "Cyclops Club", "Cyclops Lioncloth", "Rock", "Cyclops Bones"])))
-CyclopDen.treasures = 1
-CyclopDen.houses = []
+	CyclopsDen.creatures.append(Enemy("Cyclops", 7, itemsGenerator(2, ["Cyclops Eyeball", "Cyclops Club", "Cyclops Lioncloth", "Rock", "Cyclops Bones"])))
+CyclopsDen.treasures = 1
+CyclopsDen.houses = []
 
 SirenLake = Place("Siren Lake", [], [], [], [])
 SirenLake.people = []
@@ -131,7 +131,7 @@ ARIGOR[0][3] = WizardTower
 ARIGOR[1][0] = CentaurField
 ARIGOR[1][1] = Palace
 ARIGOR[1][2] = ArigorTown
-ARIGOR[1][3] = CyclopDen
+ARIGOR[1][3] = CyclopsDen
 ARIGOR[2][0] = SirenLake
 ARIGOR[2][1] = HOME
 ARIGOR[2][2] = MARKET
@@ -150,7 +150,7 @@ def describe_newGame():
 	raw_input("Me:\"I must have fallen asleep. Oh no! What time is it?? I need to meet with the King!\"")
 	raw_input("You scramble to get out of bed and find your cloak. You hear hurried footsteps in the hallway near your door and see a familiar face. You feel a blush around your cheeks.\n")
 	raw_input("\"Alex? Alexander!\n\"")
-	raw_input("\nBefore you stands the fairest maiden that ever did rome the land, Princess Katherine, only child of the King, and heir to the kingdom. She entered the room with her characteristic warmth and contagious smile. Anyone else would be able to see the blush on her face seeing a half-asleep Alexander. Unfortunatley, Alex wasn't as perceptive when it came to matters of the heart.\n\n")
+	raw_input("\nBefore you stands the fairest maiden that ever did rome the land, Princess Katherine, only child of the King, and heir to the kingdom. She entered the room with her characteristic warmth and contagious smile. Anyone else would be able to see the blush on her face seeing a half-asleep Alexander. Unfortunatley, Alexander aren't as perceptive when it came to matters of the heart.\n\n")
 	raw_input("Me: \"Ah Princess! Apologies, I am not fully dressed, and I beleive I woke up late. But, it sure is nice to wake up to you- I mean to see you this early- I mean...umm\"\n")
 	raw_input("\nYour blush grows deeper...along with hers.\n\n")
 	raw_input("Princess Katherine: \"Alex, how many times do I need to tell you? You shall call me Kat and nothing more. Anyways, father is looking for you, you were supposed to meet with him 20 minutes ago, you know how impatient he gets.\"\n")
@@ -165,9 +165,47 @@ def describe_newGame():
 	raw_input("Me: \"Yes, your majesty, I will do anything I can to help. What is the message you wish to deliver?\"\n")
 	raw_input("King Phillip: \"The message is contained in this parcel. Unfortunatley, since you're not a full Knight, I can't reveal it's contents to you. But trust me when I say that you'll be doing the kingdom an enormous favor. Also take this gold for the tolls that you will cross to get to the Wizard Tower\"\n")
 	raw_input("Me: \"Yes, sir. I'll be back soon\"\n")
-	raw_input("\nAlexander takes the parcel and gold and heads out of the main chamber. It was hard to hide his dissapointment with not being told the contents of the parcel. See, Alex is an orphan. 19 years ago, he was left at the palace doors in the middle of the night. The King took him in and raised him as one of his own. Seeing his potential, the King entered Alex into the Knight apprenticeship program. As such, he is still an apprentice, but so close to knighthood he can almost taste it. He has been one of the Kings closest aide for years, working several hours a day to make sure he is well served. So it still stings when the King wouldn't divulge information that was reserved for Knights. In any case, Alexander is determined to prove himself. Right now all he cares about is delivering the parcel in a timely manner. Gwydion the Wizard is a brilliant man, who played a vital role in helping King Phillip broker the peace the first time around. Alexander always enjoys going to the Wizard Tower to meet with him. They had formed quite a friendship.\n\n\n\n")
+	raw_input("\nA takes the parcel and gold and heads out of the main chamber. It was hard to hide his dissapointment with not being told the contents of the parcel. See, Alex is an orphan. 19 years ago, he was left at the palace doors in the middle of the night. The King took him in and raised him as one of his own. Seeing his potential, the King entered Alex into the Knight apprenticeship program. As such, he is still an apprentice, but so close to knighthood he can almost taste it. He has been one of the Kings closest aide for years, working several hours a day to make sure he is well served. So it still stings when the King wouldn't divulge information that was reserved for Knights. In any case, Alexander is determined to prove himself. Right now all he cares about is delivering the parcel in a timely manner. Gwydion the Wizard is a brilliant man, who played a vital role in helping King Phillip broker the peace the first time around. Alexander always enjoys going to the Wizard Tower to meet with him. They had formed quite a friendship.\n\n\n\n")
+	raw_input("MISSION OBJECTIVE: Take the important parcel to Gwydion the Wizrd and deliver the message from King Phillip.\n\n")
+	raw_input("")
 
 def describe_Location(positionX, positionY):
+	if positionX == 0:
+		if positionY == 0:
+			print "\nGOBLIN'S LAIR: You are situated in the grungiest place on the planet. Green, lazy, slow-moving goblins are roaming the streets going to seedy bars and weapons shops. Every single one of them are carrying around a small sword and basic shield. There are \n"
+		if positionY == 1:
+			print "UNIVORN ISLAND: "
+		if positionY == 2:
+			print "VAMPIRE MANSION: "
+		if positionY == 3:
+			print "WIZARD TOWER: "
+	if positionX == 1:
+		if positionY == 0:
+			print "CENTAUR FIELD: "
+		if positionY == 1:
+			print "PALACE: "
+		if positionY == 2:
+			print "ARIGOR TOWN: "
+		if positionY == 3:
+			print "CYCLOPS' DEN: "
+	if positionX == 2:
+		if positionY == 0:
+			print "SIREN LAKE: "
+		if positionY == 1:
+			print "HOME: "
+		if positionY == 2:
+			print "MARKET: "
+		if positionY == 3:
+			print "PHOENIX FIELD: "
+	if positionX == 3:
+		if positionY == 0:
+			print "ELVISH KINGDOM: "
+		if positionY == 1:
+			print "DRAGON LAIR: "
+		if positionY == 2:
+			print "AMAZONIAN KINGDOM: "
+		if positionY == 3:
+			print "PUZZLE ROOM: "
 def describe_ThingsYouCanDo(positionX, positionY):
 def describe_BattleScene():
 def describe_Pickup()
@@ -190,6 +228,10 @@ def changeAttributes_levelChange(level):	#changes attributes of alex and some ot
 
 
 Alexander = Alexander()
+Alexander.positionX = 1
+Alexander.positionY = 2
+describe_newGame()
+describe_Location(Alexander.positionX, Alexander.positionY)
 
 ### Introductory
 
@@ -247,10 +289,10 @@ while (user_input.lower() != "exit game"):
 			print (ARIGOR[Alexander.positionX][Alexander.positionY]).people[i].dialogue
 
 	elif user_input.lower() == "view map":
-		
+
 
 	else:
 		print "Please enter a valid command.\n"
 
 	describe_Location(Alexander.positionX, Alexander.positionY)
-	user_input = raw_input("What would you like to do?\n")
+	user_input = raw_input("\nWhat would you like to do?\n")
