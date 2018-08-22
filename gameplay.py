@@ -25,31 +25,31 @@ def itemsGenerator(numItems, itemsToChooseFrom):
 GoblinsLair = Place("Goblin's Lair", [], [], [])
 GoblinsLair.people = [npc("Goblin King", "", ""), npc("Goblin Prisoner", "", ""), npc("Tavern Owner", "", ""), npc("leather-worker", "", "")]	#goblin king, goblin's prisoner
 for x in range (0, random.randint(10, 15)):
-	GoblinsLair.creatures.append(Enemy("Goblin", 1, itemsGenerator(2, ["Goblin's Hide", "Goblin Armor", "Goblin Sword", "Goblin Shield", "Goblin Bones"])))
+	GoblinsLair.creatures.append(Enemy("Goblin", 1, itemsGenerator(2, ["Goblin's Hide", "Goblin Armor", "Goblin Sword", "Goblin Shield", "Goblin Bones"]), False))
 GoblinsLair.treasures = 1
 
 UnicornIsland = Place("Unicorn Island", [], [], [])
 UnicornIsland.people = [npc("Unicorn Leader", "", ""), npc("Spiritual Unicorn", "", ""), npc("Unicorn Student", "", ""), npc("Horn-master", "", "")] #Unicorn Leader, 
 for x in range (0, random.randint(3, 7)):
-	UnicornIsland.creatures.append(Enemy("Unicorn", 7, itemsGenerator(2, ["Unicorn Blood", "Unicorn Horn", "Unicorn Hair", "Rainbow", "Hooves", "Unicorn Bones"])))
+	UnicornIsland.creatures.append(Enemy("Unicorn", 7, itemsGenerator(2, ["Unicorn Blood", "Unicorn Horn", "Unicorn Hair", "Rainbow", "Hooves", "Unicorn Bones"]), True))
 UnicornIsland.treasures = 1
 
 VampireMansion = Place("Vampire Mansion", [], [], [])
 VampireMansion.people = [npc("Count Dracula", "", ""), npc("homeowner", "", ""), npc("Vampire Bats", "", "")]
 for x in range (0, random.randint(8, 13)):
-	VampireMansion.creatures.append(Enemy("Vampire", 3, itemsGenerator(2, ["Vampire Fangs", "Vampire Cape", "Necklace", "Vampire Heart", "Vampire Bones"])))
+	VampireMansion.creatures.append(Enemy("Vampire", 3, itemsGenerator(2, ["Vampire Fangs", "Vampire Cape", "Necklace", "Vampire Heart", "Vampire Bones"]), False))
 VampireMansion.treasures = 1
 
 WizardTower = Place("Wizard's Tower", [], [], [])
 WizardTower.people = [npc("Gwydion", "", ""),npc( "Apprentice", "", ""), npc("Wizard Janitor", "", "")]
 for x in range (0, 4):
-	WizardTower.creatures.append(Enemy("Wizard", 10, itemsGenerator(2, ["Wand", "Staff", "Wizard Robes", "Divinity Orb", "Wizard Bones"])))
+	WizardTower.creatures.append(Enemy("Wizard", 10, itemsGenerator(2, ["Wand", "Staff", "Wizard Robes", "Divinity Orb", "Wizard Bones"]), True))
 WizardTower.treasures = 1
 
 CentaurField = Place("Centaur Field", [], [], [])
 CentaurField.people = [npc("Centuar Leader", "", ""), npc("Centaur Wife", "", ""), npc("Guards", "", ""), npc("Centaur Trainer", "", "")]
 for x in range (0, random.randint(5, 10)):
-	CentaurField.creatures.append(Enemy("Centaur", 3, itemsGenerator(2, ["Centaur Hide", "Hooves", "Centaur Hair", "Centaur Blood", "Honor", "Centaur Bones"])))
+	CentaurField.creatures.append(Enemy("Centaur", 3, itemsGenerator(2, ["Centaur Hide", "Hooves", "Centaur Hair", "Centaur Blood", "Honor", "Centaur Bones"]), True))
 CentaurField.treasures = 2
 
 Palace = Place("Palace", [], [], [])
@@ -63,13 +63,13 @@ Palace.treasures = 1
 CyclopsDen = Place("Cyclops' Den", [], [], [])
 CyclopsDen.people = [npc("Cyclops Leader", "", ""), npc("Meathead", "", ""), npc("Cyclops' Dinner", "", "")]
 for x in range (0, random.randint(5, 10)):
-	CyclopsDen.creatures.append(Enemy("Cyclops", 7, itemsGenerator(2, ["Cyclops Eyeball", "Cyclops Club", "Cyclops Lioncloth", "Rock", "Cyclops Bones"])))
+	CyclopsDen.creatures.append(Enemy("Cyclops", 7, itemsGenerator(2, ["Cyclops Eyeball", "Cyclops Club", "Cyclops Lioncloth", "Rock", "Cyclops Bones"]), False))
 CyclopsDen.treasures = 1
 
 SirenLake = Place("Siren Lake", [], [], [])
 SirenLake.people = [npc("Siren Queen", "", ""), npc("Ariel the Mermaid", "", ""), npc("The Oracle", "", "")]
 for x in range (0, random.randint(5, 10)):
-	SirenLake.creatures.append(Enemy("Siren", 6, itemsGenerator(1, ["Siren Scales", "Siren's Song", "Siren Teeth", "Siren Bones"])))
+	SirenLake.creatures.append(Enemy("Siren", 6, itemsGenerator(1, ["Siren Scales", "Siren's Song", "Siren Teeth", "Siren Bones"]), False))
 SirenLake.treasures = 1
 
 HOME = Place("HOME", [], [], [])
@@ -83,25 +83,25 @@ MARKET.treasures = 1
 PhoenixField = Place("Phoenix Field", [], [], [])
 PhoenixField.people = [npc("Alonso the Swift", "", ""), npc("Feather Keeper", "", ""), npc("Phoenix Runt", "", "")]
 for x in range (0, random.randint(5, 10)):
-	PhoenixField.creatures.append(Enemy("Phoenix", 9, itemsGenerator(2, ["Phoenix Feather", "Phoenix Ashes", "Phoenix Talons", "Eternal Flame", "Phoenix Bones"])))
+	PhoenixField.creatures.append(Enemy("Phoenix", 9, itemsGenerator(2, ["Phoenix Feather", "Phoenix Ashes", "Phoenix Talons", "Eternal Flame", "Phoenix Bones"]), True))
 PhoenixField.treasures = 1
 
 ElvishKingdom = Place("Elvish Kingdom", [], [], [])
 ElvishKingdom.people = [npc("Elvish King", "", ""), npc("Elvish Queen", "", ""), npc("Elvish Knight", "", ""), npc("Elvish Apprentice", "", "")]
 for x in range (0, random.randint(5, 10)):
-	ElvishKingdom.creatures.append(Enemy("Elf", 12, itemsGenerator(2, ["Elf's Hide", "Elf Armor", "Elf Blood", "Elf Shield", "Elf Bones"])))
+	ElvishKingdom.creatures.append(Enemy("Elf", 12, itemsGenerator(2, ["Elf's Hide", "Elf Armor", "Elf Blood", "Elf Shield", "Elf Bones"]), True))
 ElvishKingdom.treasures = 1
 
 DragonLair = Place("Dragon's Lair", [], [], [])
 DragonLair.people = [npc("Dragon King", "", "")]
 for x in range (0, 2):
-	DragonLair.creatures.append(Enemy("Dragon", 15, itemsGenerator(2, ["Dragon's Hide", "Dragon Scales", "Dragon Wings", "Eternal Flame", "Dragon Bones"])))
+	DragonLair.creatures.append(Enemy("Dragon", 15, itemsGenerator(2, ["Dragon's Hide", "Dragon Scales", "Dragon Wings", "Eternal Flame", "Dragon Bones"]), False))
 DragonLair.treasures = 1
 
 AmazonianKingdom = Place("Amazonian Kingdom", [], [], [])
 AmazonianKingdom.people = [npc("Amazonian Queen", "", ""), npc("Amazonian Guard", "", ""), npc("Strategist", "", "")]
 for x in range (0, random.randint(5, 10)):
-	AmazonianKingdom.creatures.append(Enemy("Amazonian", 8, itemsGenerator(2, ["Amazonian Armor", "Amazonian Sword", "Amazonian Sword", "Amazonian Shield", "Amazonian Bones"])))
+	AmazonianKingdom.creatures.append(Enemy("Amazonian", 8, itemsGenerator(2, ["Amazonian Armor", "Amazonian Sword", "Amazonian Sword", "Amazonian Shield", "Amazonian Bones"]), True))
 AmazonianKingdom.treasures = 1
 
 PuzzleRoom = Place("Puzzle Room", [], [], [])
@@ -158,11 +158,11 @@ def describe_Location(positionX, positionY):
 		if positionY == 0:
 			print "\nGOBLIN'S LAIR: You are situated in the grungiest place on the planet. Green, lazy, slow-moving goblins are roaming the streets going to seedy bars and weapons shops. Every single one of them are carrying around a small sword and basic shield. There are about " + len(GoblinsLair.creatures) + " goblin's giving you mean looks. A few notable members of this community are the Goblin King, the Goblin Prisoner, the tavern owner, and the leather-worker.\n"
 		if positionY == 1:
-			print "UNIVORN ISLAND: "
+			print "UNIVORN ISLAND: Ah Unicorn Island, the most magical place in the world. You find yourself on the greenest meadow you've ever seen, with a number of white and brown unicorns. The little ones are playing with each other in what seems to be some friendly rough-housing. The adults are either training or taking part in traditional unicorn activities. There are about " + len(UnicornIsland.creatures) + "in coats of armor. Notable members of this community are the Unicorn Leader, the Spiritual Unicorn, the Unicron Student, and the Horn-master.\n"	#"The Unicorn Clan is an ally to the Kingdom. Attacking any of their residents will result in your instant execution by the Unicorn Leader, and a brutal war between your territories. "
 		if positionY == 2:
-			print "VAMPIRE MANSION: "
+			print "VAMPIRE MANSION: You enter a dark abandoned-looking mansion and feel a sudden chill rush over you. Your every step seems to be monitored. The floor creaks under your foot and a group of bats emerge from the end of a dark hallway and fly right above your head. But you've been here before, you know what to expect. From memory you recall there being " + len(VampireMansion.creatures) + "vampires and you know the location of their coffins...hopefully. Notable members in this house include Count Dracula, the homeowner, and the vampire bats who turn human at any moment.\n"
 		if positionY == 3:
-			print "WIZARD TOWER: "
+			print "WIZARD TOWER: Always good to be here. Gwydion's 'humble' abode. A 200-foot tower leading up to his Office. You know you can skip leg day whenever you come visit."
 	if positionX == 1:
 		if positionY == 0:
 			print "CENTAUR FIELD: "
@@ -190,6 +190,13 @@ def describe_Location(positionX, positionY):
 			print "AMAZONIAN KINGDOM: "
 		if positionY == 3:
 			print "PUZZLE ROOM: "
+	for npc in (ARIGOR[positionX][positionY]).people:
+		print npc.description
+	if len(ARIGOR[positionX][positionY].creatures) > 0:
+		if ARIGOR[positionX][positionY].creatures[0].friendBool:
+			print ARIGOR[positionX][positionY].name + " is an ally to the kingdom. Attacking any of their members will result in your immediate execution by King Phillip and a bitter war between the two territories. Control your bloodlust.\n"
+
+
 def describe_ThingsYouCanDo(positionX, positionY, level):	#the level you're at determines the quest you're taking on. The things you can do in certain locations changes if you're taking on a quest involving that location
 def describe_BattleScene():
 def describe_Pickup()
