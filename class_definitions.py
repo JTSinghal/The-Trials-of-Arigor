@@ -47,32 +47,18 @@ class Enemy(object):
 		for items in self.items:
 			pickup.append(items)
 
-class Friend(object):	#These are npcs in the game that can help you or give you stuff
-	def __init__(self, Name, description, health, gold, items, dialogue):
+class npc(object):	#These are npcs in the game that can help you or give you stuff
+	def __init__(self, Name, description, dialogue):
 		self.Name = Name
 		self.description = description
-		self.health = health
-		self.gold = gold
-		self.items = items
 		self.dialogue = dialogue  #advice given to alexander when he asks for help
 
-	def die():
-		drop()
-		#delete instance of object from the people array in the location it resides
-		#delete instance of object from the game
-
-	def drop(self, AlexanderIdentifier, pickup):
-		AlexanderIdentifier.gold += self.gold
-		for items in self.items:
-			pickup.append(items)
-
 class Place(object):	#gives a template to make a place and add things to it
-	def __init__(self, name, people, creatures, treasures, houses):	#every variable is an array excpt name and treasure
+	def __init__(self, name, people, creatures, treasures):	#every variable is an array excpt name and treasure
 		self.name = name
 		self.people = people
 		self.creatures = creatures
 		self.treasures = treasures
-		self.houses = houses
 
 class chest(object):
 	def __init__(self, amount, answer):	#the puzzle is a RANDOM number thing and you need to solve it

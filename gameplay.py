@@ -22,107 +22,91 @@ def itemsGenerator(numItems, itemsToChooseFrom):
 	return returnedArray
 
 #################################### Define Locations ################################################
-GoblinsLair = Place("Goblin's Lair", [], [], [], [])
-GoblinsLair.people = []	#goblin king, goblin's prisoner
+GoblinsLair = Place("Goblin's Lair", [], [], [])
+GoblinsLair.people = [npc("Goblin King", "", ""), npc("Goblin Prisoner", "", ""), npc("Tavern Owner", "", ""), npc("leather-worker", "", "")]	#goblin king, goblin's prisoner
 for x in range (0, random.randint(10, 15)):
 	GoblinsLair.creatures.append(Enemy("Goblin", 1, itemsGenerator(2, ["Goblin's Hide", "Goblin Armor", "Goblin Sword", "Goblin Shield", "Goblin Bones"])))
 GoblinsLair.treasures = 1
-GoblinsLair.houses = []
 
-UnicornIsland = Place("Unicorn Island", [], [], [], [])
-UnicornIsland.people = [] #Unicorn Leader, 
+UnicornIsland = Place("Unicorn Island", [], [], [])
+UnicornIsland.people = [npc("Unicorn Leader", "", ""), npc("Spiritual Unicorn", "", ""), npc("Unicorn Student", "", ""), npc("Horn-master", "", "")] #Unicorn Leader, 
 for x in range (0, random.randint(3, 7)):
 	UnicornIsland.creatures.append(Enemy("Unicorn", 7, itemsGenerator(2, ["Unicorn Blood", "Unicorn Horn", "Unicorn Hair", "Rainbow", "Hooves", "Unicorn Bones"])))
 UnicornIsland.treasures = 1
-UnicornIsland.houses = []
 
-VampireMansion = Place("Vampire Mansion", [], [], [], [])
-VampireMansion.people = []
+VampireMansion = Place("Vampire Mansion", [], [], [])
+VampireMansion.people = [npc("Count Dracula", "", ""), npc("homeowner", "", ""), npc("Vampire Bats", "", "")]
 for x in range (0, random.randint(8, 13)):
 	VampireMansion.creatures.append(Enemy("Vampire", 3, itemsGenerator(2, ["Vampire Fangs", "Vampire Cape", "Necklace", "Vampire Heart", "Vampire Bones"])))
 VampireMansion.treasures = 1
-VampireMansion.houses = []
 
-WizardTower = Place("Wizard's Tower", [], [], [], [])
-WizardTower.people = []
+WizardTower = Place("Wizard's Tower", [], [], [])
+WizardTower.people = [npc("Gwydion", "", ""),npc( "Apprentice", "", ""), npc("Wizard Janitor", "", "")]
 for x in range (0, 4):
 	WizardTower.creatures.append(Enemy("Wizard", 10, itemsGenerator(2, ["Wand", "Staff", "Wizard Robes", "Divinity Orb", "Wizard Bones"])))
 WizardTower.treasures = 1
-WizardTower.houses = []
 
-CentaurField = Place("Centaur Field", [], [], [], [])
-CentaurField.people = []
+CentaurField = Place("Centaur Field", [], [], [])
+CentaurField.people = [npc("Centuar Leader", "", ""), npc("Centaur Wife", "", ""), npc("Guards", "", ""), npc("Centaur Trainer", "", "")]
 for x in range (0, random.randint(5, 10)):
 	CentaurField.creatures.append(Enemy("Centaur", 3, itemsGenerator(2, ["Centaur Hide", "Hooves", "Centaur Hair", "Centaur Blood", "Honor", "Centaur Bones"])))
 CentaurField.treasures = 2
-CentaurField.houses = []
 
-Palace = Place("Palace", [], [], [], [])
-Palace.people = []
+Palace = Place("Palace", [], [], [])
+Palace.people = [npc("King Phillip", "", ""), npc("Princess Elizabeth", "", ""), npc("Royal Guard", "", ""), npc("Knight", "", "")]
 Palace.treasures = 1
-Palace.houses = []
 
-ArigorTown = Place("Arigor", [], [], [], [])
-Palace.people = []
+ArigorTown = Place("Arigor", [], [], [])
+Palace.people = [npc("Gardener", "", ""), npc("Farmer", "", ""), npc("Maiden in Despair", "", "")]
 Palace.treasures = 1
-Palace.houses = []
 
-CyclopsDen = Place("Cyclops' Den", [], [], [], [])
-CyclopsDen.people = []
+CyclopsDen = Place("Cyclops' Den", [], [], [])
+CyclopsDen.people = [npc("Cyclops Leader", "", ""), npc("Meathead", "", ""), npc("Cyclops' Dinner", "", "")]
 for x in range (0, random.randint(5, 10)):
 	CyclopsDen.creatures.append(Enemy("Cyclops", 7, itemsGenerator(2, ["Cyclops Eyeball", "Cyclops Club", "Cyclops Lioncloth", "Rock", "Cyclops Bones"])))
 CyclopsDen.treasures = 1
-CyclopsDen.houses = []
 
-SirenLake = Place("Siren Lake", [], [], [], [])
-SirenLake.people = []
+SirenLake = Place("Siren Lake", [], [], [])
+SirenLake.people = [npc("Siren Queen", "", ""), npc("Ariel the Mermaid", "", ""), npc("The Oracle", "", "")]
 for x in range (0, random.randint(5, 10)):
 	SirenLake.creatures.append(Enemy("Siren", 6, itemsGenerator(1, ["Siren Scales", "Siren's Song", "Siren Teeth", "Siren Bones"])))
 SirenLake.treasures = 1
-SirenLake.houses = []
 
-HOME = Place("HOME", [], [], [], [])
+HOME = Place("HOME", [], [], [])
 HOME.people = []
 HOME.treasures = 1
-HOME.houses = []
 
-MARKET = Place("MARKET", [], [], [], [])
+MARKET = Place("MARKET", [], [], [])
 MARKET.people = []
 MARKET.treasures = 1
-MARKET.houses = []
 
-PhoenixField = Place("Phoenix Field", [], [], [], [])
-PhoenixField.people = []
+PhoenixField = Place("Phoenix Field", [], [], [])
+PhoenixField.people = [npc("Alonso the Swift", "", ""), npc("Feather Keeper", "", ""), npc("Phoenix Runt", "", "")]
 for x in range (0, random.randint(5, 10)):
 	PhoenixField.creatures.append(Enemy("Phoenix", 9, itemsGenerator(2, ["Phoenix Feather", "Phoenix Ashes", "Phoenix Talons", "Eternal Flame", "Phoenix Bones"])))
 PhoenixField.treasures = 1
-PhoenixField.houses = []
 
-ElvishKingdom = Place("Elvish Kingdom", [], [], [], [])
-ElvishKingdom.people = []
+ElvishKingdom = Place("Elvish Kingdom", [], [], [])
+ElvishKingdom.people = [npc("Elvish King", "", ""), npc("Elvish Queen", "", ""), npc("Elvish Knight", "", ""), npc("Elvish Apprentice", "", "")]
 for x in range (0, random.randint(5, 10)):
 	ElvishKingdom.creatures.append(Enemy("Elf", 12, itemsGenerator(2, ["Elf's Hide", "Elf Armor", "Elf Blood", "Elf Shield", "Elf Bones"])))
 ElvishKingdom.treasures = 1
-ElvishKingdom.houses = []
 
-DragonLair = Place("Dragon's Lair", [], [], [], [])
-DragonLair.people = []
+DragonLair = Place("Dragon's Lair", [], [], [])
+DragonLair.people = [npc("Dragon King", "", "")]
 for x in range (0, 2):
 	DragonLair.creatures.append(Enemy("Dragon", 15, itemsGenerator(2, ["Dragon's Hide", "Dragon Scales", "Dragon Wings", "Eternal Flame", "Dragon Bones"])))
 DragonLair.treasures = 1
-DragonLair.houses = []
 
-AmazonianKingdom = Place("Amazonian Kingdom", [], [], [], [])
-AmazonianKingdom.people = []
+AmazonianKingdom = Place("Amazonian Kingdom", [], [], [])
+AmazonianKingdom.people = [npc("Amazonian Queen", "", ""), npc("Amazonian Guard", "", ""), npc("Strategist", "", "")]
 for x in range (0, random.randint(5, 10)):
 	AmazonianKingdom.creatures.append(Enemy("Amazonian", 8, itemsGenerator(2, ["Amazonian Armor", "Amazonian Sword", "Amazonian Sword", "Amazonian Shield", "Amazonian Bones"])))
 AmazonianKingdom.treasures = 1
-AmazonianKingdom.houses = []
 
-PuzzleRoom = Place("Puzzle Room", [], [], [], [])
+PuzzleRoom = Place("Puzzle Room", [], [], [])
 PuzzleRoom.people = []
 PuzzleRoom.treasures = 1
-PuzzleRoom.houses = []
 
 ARIGOR[0][0] = GoblinsLair
 ARIGOR[0][1] = UnicornIsland
@@ -165,14 +149,14 @@ def describe_newGame():
 	raw_input("Me: \"Yes, your majesty, I will do anything I can to help. What is the message you wish to deliver?\"\n")
 	raw_input("King Phillip: \"The message is contained in this parcel. Unfortunatley, since you're not a full Knight, I can't reveal it's contents to you. But trust me when I say that you'll be doing the kingdom an enormous favor. Also take this gold for the tolls that you will cross to get to the Wizard Tower\"\n")
 	raw_input("Me: \"Yes, sir. I'll be back soon\"\n")
-	raw_input("\nA takes the parcel and gold and heads out of the main chamber. It was hard to hide his dissapointment with not being told the contents of the parcel. See, Alex is an orphan. 19 years ago, he was left at the palace doors in the middle of the night. The King took him in and raised him as one of his own. Seeing his potential, the King entered Alex into the Knight apprenticeship program. As such, he is still an apprentice, but so close to knighthood he can almost taste it. He has been one of the Kings closest aide for years, working several hours a day to make sure he is well served. So it still stings when the King wouldn't divulge information that was reserved for Knights. In any case, Alexander is determined to prove himself. Right now all he cares about is delivering the parcel in a timely manner. Gwydion the Wizard is a brilliant man, who played a vital role in helping King Phillip broker the peace the first time around. Alexander always enjoys going to the Wizard Tower to meet with him. They had formed quite a friendship.\n\n\n\n")
+	raw_input("\nA takes the parcel and gold and heads out of the main chamber. It was hard to hide his dissapointment with not being told the contents of the parcel. See, Alex is an orphan. 19 years ago, he was left at the palace doors in the middle of the night. The King took him in and raised him as one of his own. Seeing his potential, the King entered Alex into the Knight apprenticeship program. As such, he is still an apprentice, but so close to knighthood he can almost taste it. He has been one of the Kings closest aide for years, working several hours a day to make sure he is well served. So it still stings when the King wouldn't divulge information that was reserved for Knights. In any case, Alexander is determined to prove himself. Right now all he cares about is delivering the parcel in a timely manner. Gwydion the Wizard is a brilliant man, who played a vital role in helping King Phillip broker the peace the first time around. Alexander always enjoys going to the Wizard Tower to meet with him. They had formed quite a friendship.\n\n\n")
 	raw_input("MISSION OBJECTIVE: Take the important parcel to Gwydion the Wizrd and deliver the message from King Phillip.\n\n")
-	raw_input("")
+	raw_input("One piece of advice: you can always type \"Help\" if you want to know what you are allowed to do/how to do it.\n\n")
 
 def describe_Location(positionX, positionY):
 	if positionX == 0:
 		if positionY == 0:
-			print "\nGOBLIN'S LAIR: You are situated in the grungiest place on the planet. Green, lazy, slow-moving goblins are roaming the streets going to seedy bars and weapons shops. Every single one of them are carrying around a small sword and basic shield. There are \n"
+			print "\nGOBLIN'S LAIR: You are situated in the grungiest place on the planet. Green, lazy, slow-moving goblins are roaming the streets going to seedy bars and weapons shops. Every single one of them are carrying around a small sword and basic shield. There are about " + len(GoblinsLair.creatures) + " goblin's giving you mean looks. A few notable members of this community are the Goblin King, the Goblin Prisoner, the tavern owner, and the leather-worker.\n"
 		if positionY == 1:
 			print "UNIVORN ISLAND: "
 		if positionY == 2:
@@ -206,7 +190,7 @@ def describe_Location(positionX, positionY):
 			print "AMAZONIAN KINGDOM: "
 		if positionY == 3:
 			print "PUZZLE ROOM: "
-def describe_ThingsYouCanDo(positionX, positionY):
+def describe_ThingsYouCanDo(positionX, positionY, level):	#the level you're at determines the quest you're taking on. The things you can do in certain locations changes if you're taking on a quest involving that location
 def describe_BattleScene():
 def describe_Pickup()
 def describe_Quest()
