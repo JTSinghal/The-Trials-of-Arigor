@@ -72,7 +72,7 @@ for x in range (0, random.randint(5, 10)):
 	SirenLake.creatures.append(Enemy("Siren", 6, itemsGenerator(1, ["Siren Scales", "Siren's Song", "Siren Teeth", "Siren Bones"]), False))
 SirenLake.treasures = 1
 
-HOME = Place("HOME", [], [], [])
+EmptyField = Place("Empty Field", [], [], [])
 HOME.people = []
 HOME.treasures = 1
 
@@ -117,7 +117,7 @@ ARIGOR[1][1] = Palace
 ARIGOR[1][2] = ArigorTown
 ARIGOR[1][3] = CyclopsDen
 ARIGOR[2][0] = SirenLake
-ARIGOR[2][1] = HOME
+ARIGOR[2][1] = EmptyField
 ARIGOR[2][2] = MARKET
 ARIGOR[2][3] = PhoenixField
 ARIGOR[3][0] = ElvishKingdom
@@ -162,34 +162,34 @@ def describe_Location(positionX, positionY):
 		if positionY == 2:
 			print "VAMPIRE MANSION: You enter a dark abandoned-looking mansion and feel a sudden chill rush over you. Your every step seems to be monitored. The floor creaks under your foot and a group of bats emerge from the end of a dark hallway and fly right above your head. But you've been here before, you know what to expect. From memory you recall there being " + len(VampireMansion.creatures) + "vampires and you know the location of their coffins...hopefully. Notable members in this house include Count Dracula, the homeowner, and the vampire bats who turn human at any moment.\n"
 		if positionY == 3:
-			print "WIZARD TOWER: Always good to be here. Gwydion's 'humble' abode. A 200-foot tower leading up to his Office. You know you can skip leg day whenever you come visit."
+			print "WIZARD TOWER: Always good to be here. Gwydion's 'humble' abode. A 200-foot tower leading up to his Office. You know you can skip leg day whenever you come visit. The stone tower holds a mystical quality, causing everyone to fall into a calm and pensive state. " + len(WizardTower.creatures) + " wizards are walking around, stacks of books following them, floating in midair. They seemed to be in deep thought about...something. There are a few notable individuals in the tower including Gwydion, his apprentice, and a jolly Wizard Janitor, who used his magic to keep the tower neat and clean.\n"
 	if positionX == 1:
 		if positionY == 0:
-			print "CENTAUR FIELD: "
+			print "CENTAUR FIELD: You come across a lush and mellow field. Several centuars roam the land. Known for their might, the centaurs can always be found training. A few are training at the archery ranges, a few are sprinting around the track, and others still are in the weight area on the field. There are about " + len(CentaurField.creatures) + " directly around you, wearing coats of armor, ready for battle. Some members in this community include Centaur Leader, his wife, a lone guard standing by the entrance, and the premier Centaur Trainer.\n"
 		if positionY == 1:
-			print "PALACE: "
+			print "PALACE: The royal Palace of the Kingdom of Arigor is the most magnificent structure in the land. All ministers, guards, and soldiers in the palace are unbelievably loyal to the king, and can be seen diligently working to maintain peace within the lands. In your vicinity, you see King Phillip at his throne, Princess Elizabeth at his side, the royal guard, and a soldier.\n"
 		if positionY == 2:
-			print "ARIGOR TOWN: "
+			print "ARIGOR TOWN: The hometown of the kindom's residents. All who live here see Phillip as a fair and wise ruler. A cliched, happy town with several cliched characters, including the Gardener, the Farmer, and the Maiden in Despair.\n"
 		if positionY == 3:
-			print "CYCLOPS' DEN: "
+			print "CYCLOPS' DEN: You enter a dark, stony cave, lit only by a dim fire. The fire is surrounded by a group of " + len(CyclopsDen.creatures) + " cyclops, each looking dumber than the other. An overwhelming smell of someone who hasn't showered in weeks fills the cave. At the far end of a cave, you see the Cyclops Leader, his trusty assistant, Meathead, and their dinner for the night, a tied up creature of some sort, who looks like he has accepted his fate.\n"
 	if positionX == 2:
 		if positionY == 0:
-			print "SIREN LAKE: "
+			print "SIREN LAKE: You got the boat you needed to explore this land by talking to a man standing at bay. For some reason, he was laughing hysterically, as if laughing at your decision, when you asked him for a boat. Siren Lake looked beautiful this time of day, but beware the dangers. A sweet song filled the air, coming from the sirens swimming underwater. You could make out " + len(SirenLake.creatures) + " dark figures resembling sirens under the lake surface. Some prominent figures in the lake are the Siren Queen, the Oracle, and Ariel the Mermaid."
 		if positionY == 1:
-			print "HOME: "
+			print "Empty Field: You arrive to an empty field. Tall, yellow grass surrounds you, moss covering the stones. One lone oak tree stands in the middle of the field, looking like something straight out of a horror story.\n"
 		if positionY == 2:
-			print "MARKET: "
+			print "MARKET: Welcome to the market! Here you can trade goods from your inventory for money, or buy items instead.\n"
 		if positionY == 3:
-			print "PHOENIX FIELD: "
+			print "PHOENIX FIELD: Glorious fiery-red creatures fly above you. The field is lush and green, which surprises you, considering the amount of fire it is exposed to. The phoenixes calculate their every step and move with amazing precision. There seem to be " + len(PhoenixField.creatures) + "phoenix soldiers in the sky, along with Alonso the Swift, the phoenix leader, the Feather-Keeper, and a small Rund Phoenix.\n"
 	if positionX == 3:
 		if positionY == 0:
-			print "ELVISH KINGDOM: "
+			print "ELVISH KINGDOM: The legendary Elvish Kingdom is a sight to behold. Every structure was immaculately made. Every single resident looked as if they were hand-crafted by god. The soldiers were the best in the land, and therefore, King Phillip's alliance with the Kingdom is a crucial one. Beware those that oppose the Elves. You see " + len(ElvishKingdom.creatures) + " standing next to you. People that you talk to whenever you come here include, The Elvish King, the Elvish Queen, the Elvish Kight, and the Elvish Apprentice (similar to yourself).\n"
 		if positionY == 1:
-			print "DRAGON LAIR: "
+			print "DRAGON LAIR: You immediately break into a sweat in the near 200 degree heat. Most of the floor is lava, except for a couple large rocks leading to the throne of the Dragon King. " + len(DragonLair.creatures) + " dragons are lounging around, steam coming from their nose, their scales a sight to behold.\n"
 		if positionY == 2:
-			print "AMAZONIAN KINGDOM: "
+			print "AMAZONIAN KINGDOM: Through a thicket of trees, you enter the Amazonian Kingdom. Large and ripped women roam the land, some on equally large horses, all adorning a suit of armor. Step pyramids of various sizes are dispersed around the kingdom. On the tallest of the pyramids, sat the Amazonian Queen, the strongest and wisest of the women, accompanied by her Amazonian Guard and her Strategist."
 		if positionY == 3:
-			print "PUZZLE ROOM: "
+			print "PUZZLE ROOM: Welcome to the Puzzle Room! The puzzles never stop. Every time you enter this room, a new puzzle is created. If you solve the puzzle you get MONEY!!\n"
 	for npc in (ARIGOR[positionX][positionY]).people:
 		print npc.description
 	if len(ARIGOR[positionX][positionY].creatures) > 0:
