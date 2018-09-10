@@ -1,5 +1,6 @@
 from class_definitions import *
 import random
+from time import sleep
 
 
 #################################### Define Map ####################################################
@@ -204,7 +205,7 @@ def describe_Quest()
 def describe_Marketplace(stage) #stage 1 is just displaying prices, stage 2 is confirming that alex wants to sell
 def describe_
 
-
+questCompleteBool = False; #certain value is checked in the end of the main loop to make sure the quest is not yet complete. If questCompleteBool is true at end of game loop, level up alexander and levelChange function is initiated
 def changeAttributes_levelChange(level):	#changes attributes of alex and some other people when he reaches a new level. For example changes the dialog he speakes with the princess
 	elif level == 2:
 	elif level == 3:
@@ -261,7 +262,7 @@ while (user_input.lower() != "exit game"):
 		describe_Location(Alexander.positionX, Alexander.positionY)
 		describe_ThingsYouCanDo(Alexander.positionX, Alexander.positionY)
 
-	elif user_input_split[0] == "attack":	#TODO
+	elif user_input_split[0] == "attack":	#TODO 	#use sleep to give user the illusion of a fight. Randomly assert critical hit
 
 		if user_input_split[1] != (ARIGOR[Alexander.positionX][Alexander.positionY]).creatures[0].species.lower():
 			print "There are no " + user_input_split[1] + "s here.\n"
