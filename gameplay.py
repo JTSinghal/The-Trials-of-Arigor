@@ -159,7 +159,7 @@ def describe_Location(positionX, positionY):
 		if positionY == 0:
 			print "\nGOBLIN'S LAIR: You are situated in the grungiest place on the planet. Green, lazy, slow-moving goblins are roaming the streets going to seedy bars and weapons shops. Every single one of them are carrying around a small sword and basic shield. There are about " + len(GoblinsLair.creatures) + " goblin's giving you mean looks. A few notable members of this community are the Goblin King, the Goblin Prisoner, the tavern owner, and the leather-worker.\n"
 		if positionY == 1:
-			print "UNIVORN ISLAND: Ah Unicorn Island, the most magical place in the world. You find yourself on the greenest meadow you've ever seen, with a number of white and brown unicorns. The little ones are playing with each other in what seems to be some friendly rough-housing. The adults are either training or taking part in traditional unicorn activities. There are about " + len(UnicornIsland.creatures) + "in coats of armor. Notable members of this community are the Unicorn Leader, the Spiritual Unicorn, the Unicron Student, and the Horn-master.\n"	#"The Unicorn Clan is an ally to the Kingdom. Attacking any of their residents will result in your instant execution by the Unicorn Leader, and a brutal war between your territories. "
+			print "UNICORN ISLAND: Ah Unicorn Island, the most magical place in the world. You find yourself on the greenest meadow you've ever seen, with a number of white and brown unicorns. The little ones are playing with each other in what seems to be some friendly rough-housing. The adults are either training or taking part in traditional unicorn activities. There are about " + len(UnicornIsland.creatures) + "in coats of armor. Notable members of this community are the Unicorn Leader, the Spiritual Unicorn, the Unicron Student, and the Horn-master.\n"	#"The Unicorn Clan is an ally to the Kingdom. Attacking any of their residents will result in your instant execution by the Unicorn Leader, and a brutal war between your territories. "
 		if positionY == 2:
 			print "VAMPIRE MANSION: You enter a dark abandoned-looking mansion and feel a sudden chill rush over you. Your every step seems to be monitored. The floor creaks under your foot and a group of bats emerge from the end of a dark hallway and fly right above your head. But you've been here before, you know what to expect. From memory you recall there being " + len(VampireMansion.creatures) + "vampires and you know the location of their coffins...hopefully. Notable members in this house include Count Dracula, the homeowner, and the vampire bats who turn human at any moment.\n"
 		if positionY == 3:
@@ -205,9 +205,40 @@ def describe_Quest()
 def describe_Marketplace(stage) #stage 1 is just displaying prices, stage 2 is confirming that alex wants to sell
 def describe_
 
+############################################Quest helper functions############################################################################
+
 questCompleteBool = False; #certain value is checked in the end of the main loop to make sure the quest is not yet complete. If questCompleteBool is true at end of game loop, level up alexander and levelChange function is initiated
-def changeAttributes_levelChange(level):	#changes attributes of alex and some other people when he reaches a new level. For example changes the dialog he speakes with the princess
+quest1 = [goneToWizardTower, talkedToGwydion]		#deliver parcel to Gwydion
+quest2 = [goneToGoblinLair, talkedToGoblinKing, defeatedGoblins]		#retrieve sword from Goblins
+quest3 = [goneToVampireMansion, talkedToCount, defeatedVampires]		#rescue princess from Vampires
+quest4 = [goneToCyclopsDen, talkedToCyclopsLeader, confusedCyclops]		#retrieve Gwydion's orb from the Cyclops' Cave
+quest5 = [goneToUnicornField, talkToUnicornLeader, goToHappinessHourglass, shrinkDown, defeatZombieGerms, receiveReward]		#help unicorns restore happiness
+quest6 = [goneToPhoenixField, talkedToAlonso, defeatedFirstWave_Sirens, saveNursery, saveAlonso]		#Save Phoenix Field from Siren attack
+quest7 = [goToElvishKingdom, talkToElfKing, solveElfPuzzle]		#Earn respect of the Elves
+quest8 = [goToArigorTown, climbTallestBuilding, defeatOneDragon, useGwydionOrb, defeatDragonKing, talkToKingPhillip]		#save Arigor Town from the dragon attack 	#phillip is injured during the attack
+quest9 = [gatherAtWizardTower, makeCentaursAttackGoblinsAndVampires, makesWizardsAttackCyclops, identifyCommonObjective, stopBattle]		#Lead war against Foes
+def questAssistant(level): 	#function knows quest based on level input. function is meant to keep track of what has been done, and print/update subsequent aspects of the game, based on what you've done
+
+
+def questBoolCheckAndUpdate(level): 	#based on the level input, function knows which quest alex is undertaking. The function is called at the end of the main game loop, and goes through the checklish of what the quest requires and updates the bools.
+	if level == 1:
+		for x in quest1:
+
 	elif level == 2:
+	elif level == 3:
+	elif level == 4:
+	elif level == 5:
+	elif level == 6:
+	elif level == 7:
+	elif level == 8:
+	elif level == 9:	
+
+#################################################################################################################################################
+
+def changeAttributes_levelChange(level):	#changes attributes of alex and some other people when he reaches a new level. For example changes the dialog he speakes with the princess
+	print "You have completed your quest and leveled up! This comes with a lot of exciting new upgrades to your skills, as well as new accessibilities in the game.\n"
+	if level == 2:
+		Palace.people[0].dialogue = "Alexander! Thank you for delivering the parcel to Gwydion. There have been developments that allow for me to tell you exactly what you delivered. You see, now that the peace between the Elves and the Amazonians is broken, I am trying to make sure history does not repeat itself.\nInside the parcel lay my plan to rebuild the peace, by rallying all of our allies towards teh process. However, the clans understand how costly the struggle will be. Centaur Field is not going to fight with us unless they get something in return. Their price is the return of the Sacred Sword of Hudotos. Legend says that Hudotos was single-handedly able to defeat an army of Goblins using only that sword. Centaur intelligence says that a goblin spy infiltrated their treasury and stole the sword. Alexander, I'm going to need you to retrieve the sword. Having the centaurs on our side is vital to my plan, and this is the only way they will cooperate. I would start by going to the Goblin's Lair to see what you can find. Godspeed Alexander.\n"
 	elif level == 3:
 	elif level == 4:
 	elif level == 5:
@@ -217,6 +248,10 @@ def changeAttributes_levelChange(level):	#changes attributes of alex and some ot
 	elif level == 9:
 	elif level == 10:
 
+	if level != 10:
+		print "You can also start the next quest, just go talk to King Phillip and he will inform you of your mission.\n"
+	else:
+		print "Congratulations! You have completed the trials presented to you in Arigor. As a reward for your incredible bravery and service, you have been granted the position of Head Knight, the youngest ever to achieve such a feat! You see Princess Elizabeth from the corner of your eye, and you finally have the courage to walk up to her, and ask her to get dinner. \"A real date,\" you say to her blushing face. King Phillip has a statue of yourself built in the town square, and several generations of children look up to you as the greatest inspiration in their lives. Farewell, young Sir, and live the rest of your life to its fullest.\n"
 
 
 Alexander = Alexander()
@@ -233,6 +268,13 @@ user_input = raw_input("What would you like to do? :\n")
 user_input_split = user_input.lower().split()
 
 while (user_input.lower() != "exit game"):
+
+	if questCompleteBool == True:
+		Alexander.level += 1
+		changeAttributes_levelChange(Alexander.level)
+
+	questCompleteBool = False;
+
 	user_input_split = user_input.lower().split()
 	if user_input_split[0] == "go":
 
