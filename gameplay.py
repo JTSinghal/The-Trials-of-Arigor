@@ -211,7 +211,7 @@ questCompleteBool = False; #certain value is checked in the end of the main loop
 quest1 = [goneToWizardTower, talkedToGwydion]		#deliver parcel to Gwydion
 quest2 = [goneToGoblinLair, talkedToGoblinKing, defeatedGoblins]		#retrieve sword from Goblins
 quest3 = [goneToVampireMansion, talkedToCount, defeatedVampires]		#rescue princess from Vampires
-quest4 = [goneToCyclopsDen, talkedToCyclopsLeader, confusedCyclops]		#retrieve Gwydion's orb from the Cyclops' Cave
+quest4 = [goneToCyclopsDen, talkedToCyclopsLeader, confuseCyclops]		#retrieve Gwydion's orb from the Cyclops' Cave
 quest5 = [goneToUnicornField, talkToUnicornLeader, goToHappinessHourglass, shrinkDown, defeatZombieGerms, receiveReward]		#help unicorns restore happiness
 quest6 = [goneToPhoenixField, talkedToAlonso, defeatedFirstWave_Sirens, saveNursery, saveAlonso]		#Save Phoenix Field from Siren attack
 quest7 = [goToElvishKingdom, talkToElfKing, solveElfPuzzle]		#Earn respect of the Elves
@@ -235,24 +235,39 @@ def questBoolCheckAndUpdate(level): 	#based on the level input, function knows w
 
 #################################################################################################################################################
 
+missionLevel2 = "\"Alexander! Thank you for delivering the parcel to Gwydion. There have been developments that allow for me to tell you exactly what you delivered. You see, now that the peace between the Elves and the Amazonians is broken, I am trying to make sure history does not repeat itself.\nInside the parcel lay my plan to rebuild the peace, by rallying all of our allies towards the process. However, the clans understand how costly the struggle will be. Centaur Field is not going to fight with us unless they get something in return. Their price is the return of the Sacred Sword of Hudotos. Legend says that Hudotos was single-handedly able to defeat an army of Goblins using only that sword. Centaur intelligence says that a goblin spy infiltrated their treasury and stole the sword. Alexander, I'm going to need you to retrieve the sword. Having the centaurs on our side is vital to my plan, and this is the only way they will cooperate. I would start by going to the Goblin's Lair to see what you can find. Godspeed Alexander.\"\n"
+missionLevel3 = "\"Ah, thank you for retrieving the sword stolen from the Centaurs. I will get one of my knights to deliver the sword safely to Centaur Field.\" The king's face suddenly grew somber, \"A more pressing issue has arisen. As troops are being assembled on either side of the rivalry, it seems like the Vampires have taken advantage of the chaos. They have...kidnapped the princess.\"\n Alexander gasped, his heart at his throat, but quickly regained his composure. It was apparent that the king was staying cool in the situation, and Alex was going to do nothing less. The king continued, \"You must travel to the Vampire Mansion and bring her back...at ANY cost.\"\n"
+missionLevel4 = "\"Oh happy day! The princess is returned to the castle, safe and sound. All thanks to you Alex. I can finally give my full concentration to the crisis at hand. While you were away, Gwydion and I have been trying to forumlate a plan to calm down the Elves and the Amazonians. However, in order to see all outcomes, Gwydion requires his orb. It, unfortunately, slipped out of his satchel during his last visit to the Cyclops Den. All of my knights are currently stationed at the Elves' and Amazonians' in order to maintain a ceasefire. I require you to go to the Cyclops Den and retrieve Gwydion's Orb. Be careful, Cyclops are dumb but unforgiving. You might need to sneak around a little.\"\n"
+missionLevel5 = "\"Thank you Alexander. With this orb, we can finally take on the crisis and work towards a peaceful solution. We are still in the process of rallying our allies. One of our closest friends is the Unicorn clan. However, it seems like there is trouble in their land. As we know, Unicorns are powered by the Essence of Happiness. It looks as though someone has tampered with the happiness balance in Unicorn Island. We need you to go over there and figure out what's going on. Hopefully, you'll be able to figure out the solution.\"\n"
+missionLevel6 = "\"Happiness is once again balanced in Unicorn Island! I realize that you've been putting out fires all over the place lately, but, while you were away, another has arisen. This time quite literally. Phoenix Field, home to our allies the Phoenixes, has come under attack by the Siren Clan. Fire is weak against water. As such, the Phoenix Clan is losing the battle. I need you to go over there and try to figure out a solution. I am sending you there alone. I realize that this is a tall order, but I think you're ready. Think of it as a test.\"\n King Alexander believes in you. You're not going to let him down\n"
+missionLevel7 = "\"Ah, Alexander, it was quite unfortunate that the conflict at Phoenix Field could not be settled peacefully. Let this be a lesson. No matter how hard we try to do the right thing, there will be times when people are so disillusioned that they must resort to actions from the wrong side. I want to continue this lesson and send you to the Elvish Kingdom. Go and have a talk with the Elf King, Legolas. Make sure we are on the same page about wanting to find a peaceful solution, not one that requires war.\"\n"
+missionLevel8 = "\"Great work with the Elves, Alexander. There is hope for you yet! I think you've earned yourself a break, go ahead and take the rest of- \" King Phillip was cut short by the sound of a huge explosion in the nearby village. \n\"DRAGON!!\" they heard someone shout. \"Go, check it out,\" exclaimed the king, \"Make sure everyone is safe.\"\n"
+missionLevel9 = "\"\"\n" ##The king is injured by the dragon. Information comes out that the Goblins, vamps, and cyclops conspired to release the dragon on Arigor. Alex is furious and leads ALL the troops to attack those clans. Then he realizes that the king would not have wanted this and stops the fight and brokers a peaceful solution.
+
 def changeAttributes_levelChange(level):	#changes attributes of alex and some other people when he reaches a new level. For example changes the dialog he speakes with the princess
 	print "You have completed your quest and leveled up! This comes with a lot of exciting new upgrades to your skills, as well as new accessibilities in the game.\n"
 	if level == 2:
-		Palace.people[0].dialogue = "Alexander! Thank you for delivering the parcel to Gwydion. There have been developments that allow for me to tell you exactly what you delivered. You see, now that the peace between the Elves and the Amazonians is broken, I am trying to make sure history does not repeat itself.\nInside the parcel lay my plan to rebuild the peace, by rallying all of our allies towards teh process. However, the clans understand how costly the struggle will be. Centaur Field is not going to fight with us unless they get something in return. Their price is the return of the Sacred Sword of Hudotos. Legend says that Hudotos was single-handedly able to defeat an army of Goblins using only that sword. Centaur intelligence says that a goblin spy infiltrated their treasury and stole the sword. Alexander, I'm going to need you to retrieve the sword. Having the centaurs on our side is vital to my plan, and this is the only way they will cooperate. I would start by going to the Goblin's Lair to see what you can find. Godspeed Alexander.\n"
+		Palace.people[0].dialogue = missionLevel2
 	elif level == 3:
+		Palace.people[0].dialogue = missionLevel3
 	elif level == 4:
+		Palace.people[0].dialogue = missionLevel4
 	elif level == 5:
+		Palace.people[0].dialogue = missionLevel5
 	elif level == 6:
+		Palace.people[0].dialogue = missionLevel6
 	elif level == 7:
+		Palace.people[0].dialogue = missionLevel7
 	elif level == 8:
+		Palace.people[0].dialogue = missionLevel8
 	elif level == 9:
+		Palace.people[0].dialogue = missionLevel9
 	elif level == 10:
-
-	if level != 10:
-		print "You can also start the next quest, just go talk to King Phillip and he will inform you of your mission.\n"
-	else:
 		print "Congratulations! You have completed the trials presented to you in Arigor. As a reward for your incredible bravery and service, you have been granted the position of Head Knight, the youngest ever to achieve such a feat! You see Princess Elizabeth from the corner of your eye, and you finally have the courage to walk up to her, and ask her to get dinner. \"A real date,\" you say to her blushing face. King Phillip has a statue of yourself built in the town square, and several generations of children look up to you as the greatest inspiration in their lives. Farewell, young Sir, and live the rest of your life to its fullest.\n"
-
+		#end of game.
+	if level < 9:
+		print "You can also start the next quest, just go talk to King Phillip and he will inform you of your mission.\n"
+	
 
 Alexander = Alexander()
 Alexander.positionX = 1
@@ -324,6 +339,9 @@ while (user_input.lower() != "exit game"):
 
 	elif user_input.lower() == "view map":
 
+	elif user_input.lower() == "query quest":
+		print "You recall the details of the mission told to you by the king...\n"
+		print ""
 
 	else:
 		print "Please enter a valid command.\n"
